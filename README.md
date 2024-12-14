@@ -35,7 +35,7 @@ Autodoc is a **experimental** toolkit for auto-generating codebase documentation
 
 The generated documentation lives in your codebase, and travels where your code travels. Developers who download your code can use the `doc` command to ask questions about your codebase and get highly specific answers with reference links back to code files. 
 
-In the near future, documentation will be re-indexed as part your CI pipeline, so it is always up-to-date. If your interested in working contributing to this work, see [this issue](https://github.com/context-labs/autodoc/issues/7).
+In the near future, documentation will be re-indexed as part of your CI pipeline, so it is always up-to-date. If you are interested in working contributing to this work, see [this issue](https://github.com/context-labs/autodoc/issues/7).
 
 
 ### Status
@@ -44,7 +44,7 @@ Autodoc is in the early stages of development. It is functional, but not ready f
 ### FAQs
 **Question:** I'm not getting good responses. How can I improve response quality?
 
-**Answer:** Autodoc is in the early stages of development. As such, the response quality can vary widely based on the type of project your indexing and how questions are phrased. A few tips to writing good query:
+**Answer:** Autodoc is in the early stages of development. As such, the response quality can vary widely based on the type of project you are indexing and how questions are phrased. A few tips for writing good queries:
 1. Be specific with your questions. Ask things like "What are the different components of authorization in this system?" rather than "explain auth". This will help Autodoc select the right context to get the best answer for your question.
 2. Use GPT-4. GPT-4 is substantially better at understanding code compared to GPT-3.5 and this understanding carries over into writing good documentation as well. If you don't have access, sign up [here](https://openai.com/waitlist/gpt-4-api).
 
@@ -87,7 +87,7 @@ $ git clone https://github.com/context-labs/autodoc.git
 $ cd autodoc
 ```
 
-Right now Autodoc only supports OpenAI. Make sure you have have your OpenAI API key exported in your current session:
+Right now Autodoc only supports OpenAI. Make sure you have your OpenAI API key exported in your current session:
 
 ```bash
 $ export OPENAI_API_KEY=<YOUR_KEY_HERE>
@@ -107,12 +107,12 @@ You're now ready to query documentation for the Autodoc repository:
 
 <img src="https://raw.githubusercontent.com/context-labs/autodoc/master/assets/query.gif" alt="Markdownify" width="60%" style="border-radius:24px;">
 
-This is the core querying experience. It's very basic right now, with plenty of room of improvement. If you're interested in improving the Autodoc CLI querying experience, checkout [this issue](https://github.com/context-labs/autodoc/issues/11).
+This is the core querying experience. It's very basic right now, with plenty of room for improvement. If you're interested in improving the Autodoc CLI querying experience, checkout [this issue](https://github.com/context-labs/autodoc/issues/11).
 
 ### Indexing
-Follow the steps below to generate documentation for your own repository using Autodoc.
+Follow the steps below to generate documentation for your repository using Autodoc.
 
-Change directory into the root of your project:
+Change the directory into the root of your project:
 ```bash
 cd $PROJECT_ROOT
 ```
@@ -143,13 +143,13 @@ You should see a screen like this:
 
 This screen estimates the cost of indexing your repository. You can also access this screen via the `doc estimate` command. If you've already indexed once, then `doc index` will only reindex files that have been changed on the second go.
 
-For every file in your project, Autodoc calculates the number of tokens in the file based on the file content. The more lines of code, the larger the number of tokens. Using this number, it determine which model it will use on per file basis, always choosing the cheapest model whose context length supports the number of tokens in the file. If you're interested in helping make model selection configurable in Autodoc, check out [this issue](https://github.com/context-labs/autodoc/issues/9).
+For every file in your project, Autodoc calculates the number of tokens in the file based on the file content. The more lines of code, the larger the number of tokens. Using this number, it determines which model it will use on per file basis, always choosing the cheapest model whose context length supports the number of tokens in the file. If you're interested in helping make model selection configurable in Autodoc, check out [this issue](https://github.com/context-labs/autodoc/issues/9).
 
 **Note:** This naive model selection strategy means that files under ~4000 tokens will be documented using GPT-3.5, which will result in less accurate documentation. **We recommend using GPT-4 8K at a minimum.** Indexing with GPT-4 results in significantly better output. You can apply for access [here](https://openai.com/waitlist/gpt-4-api).
 
 For large projects, the cost can be several hundred dollars. View OpenAI pricing [here](https://openai.com/pricing). 
 
-In the near future, we will support self-hosted models, such as [Llama](https://github.com/facebookresearch/llama) and [Alpaca](https://github.com/tatsu-lab/stanford_alpaca). Read [this issue](https://github.com/context-labs/autodoc/issues/8) if you're interesting in contributing to this work.
+In the near future, we will support self-hosted models, such as [Llama](https://github.com/facebookresearch/llama) and [Alpaca](https://github.com/tatsu-lab/stanford_alpaca). Read [this issue](https://github.com/context-labs/autodoc/issues/8) if you're interested in contributing to this work.
 
 When your repository is done being indexed, you should see a screen like this:
 
@@ -163,6 +163,6 @@ There is a small group of us that are working full time on Autodoc. Join us on [
 
 ## Contributing
 
-As an open source project in a rapidly developing field, we are extremely open to contributions, whether it be in the form of a new feature, improved infra, or better documentation.
+As an open-source project in a rapidly developing field, we are extremely open to contributions, whether it be in the form of a new feature, improved infra, or better documentation.
 
 For detailed information on how to contribute, see [here](.github/CONTRIBUTING.md).
